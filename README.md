@@ -26,8 +26,10 @@
 
 ```text
 cv_squats/
-├── configs/
-│   └── app.yaml
+├── configs
+│   ├── app.yaml
+│   └── mmpose
+│       └── rtmpose_s_5k_30e.py
 ├── docs/
 │   └── report/
 ├── outputs/
