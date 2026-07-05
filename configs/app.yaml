@@ -1,0 +1,37 @@
+app:
+  title: "Squat technique analysis"
+  exercise: "squat"
+  exercise_type: "squat"
+  history_path: "outputs/history/runs.jsonl"
+  report_dir: "outputs/reports"
+  prediction_dir: "outputs/predictions"
+
+selected_model:
+  status: "final_model_selected"
+  model_id: "rtmpose_s"
+  architecture: "RTMPose"
+  name: "RTMPose-S"
+  backend: "mmpose"
+  config_path: "configs/mmpose/rtmpose_s_5k_30e.py"
+  checkpoint_path: "outputs/models/rtmpose/best_coco_AP_epoch_30.pth"
+  weights_path: "outputs/models/rtmpose/best_coco_AP_epoch_30.pth"
+  bbox_strategy: "whole_frame"
+  selection_record: "outputs/metrics/final_model_selection.json"
+  allow_model_selection_in_demo: false
+
+runtime:
+  environment: ".venv-mmpose"
+  device: "cuda:0"
+  confidence_threshold: 0.5
+  draw_min_conf: 0.15
+  angle_min_conf: 0.25
+  body_line_min_conf: 0.35
+  reliable_min_conf: 0.50
+  side_switch_margin: 0.08
+
+squat:
+  phase_top_min_angle: 160
+  phase_bottom_max_angle: 110
+  depth_sufficient_max_angle: 110
+  torso_lean_warn_angle: 45
+  knee_symmetry_warn_diff: 20

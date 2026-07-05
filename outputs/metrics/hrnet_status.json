@@ -1,0 +1,39 @@
+{
+  "experiment_id": "EXP-TRAIN-003",
+  "architecture": "HRNet",
+  "model": "HRNet-W32 UDP",
+  "backend": "MMPose",
+  "status": "completed",
+  "counts_toward_mandatory_architectures": true,
+  "mandatory_fine_tuning_progress": "3/5",
+  "completed_architectures": [
+    "YOLO Pose",
+    "RTMPose",
+    "HRNet"
+  ],
+  "pending_architectures": [
+    "Lite-HRNet",
+    "ViTPose"
+  ],
+  "final_best_model_selected": false,
+  "real_training_run_by_agent": false,
+  "checkpoint_downloaded_by_agent": false,
+  "checkpoint_downloaded_automatically_during_user_run": true,
+  "best_checkpoint": "outputs/models/hrnet/best_coco_AP_epoch_5.pth",
+  "final_epoch_checkpoint": "outputs/models/hrnet/epoch_30.pth",
+  "primary_metric": {
+    "name": "coco/AP",
+    "value": 0.786985,
+    "source": "MMPose CocoMetric validation at epoch 5; log saved best checkpoint at epoch 5"
+  },
+  "final_epoch_metric": {
+    "name": "coco/AP",
+    "value": 0.784195,
+    "source": "MMPose CocoMetric validation at epoch 30"
+  },
+  "caution": [
+    "YOLO metrics were produced by the Ultralytics evaluator.",
+    "RTMPose and HRNet metrics were produced by MMPose CocoMetric.",
+    "Final comparison should include consistent speed and model-size measurement and preferably common test split evaluation."
+  ]
+}

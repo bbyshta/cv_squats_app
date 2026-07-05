@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Local data
+data/raw/
+data/processed/
+
+# Runtime outputs
+outputs/predictions/
+outputs/reports/
+outputs/uploads/
+outputs/history/
+outputs/**/*.log
+
+# Keep selected checkpoint, ignore other model files
+*.pt
+*.pth
+!outputs/models/rtmpose/best_coco_AP_epoch_30.pth
+
+# Videos generated or uploaded during local runs
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# YOLO/Ultralytics training outputs
+runs/
+
+# Temporary files
+*.tmp
+*.bak

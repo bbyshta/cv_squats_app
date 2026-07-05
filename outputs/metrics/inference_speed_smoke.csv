@@ -1,0 +1,6 @@
+model_id,architecture,model_name,backend,checkpoint_path,checkpoint_size_mb,device,sample_count,warmup_count,input_size,batch_size,preprocess_mean_ms,inference_mean_ms,postprocess_mean_ms,total_mean_ms,total_median_ms,total_p95_ms,fps,benchmark_status,error_message,measured_at
+yolo_pose,YOLO Pose,YOLO11n-pose,ultralytics,runs/pose/outputs/models/yolo_pose/extended_yolo_pose_coco_subset_5k/weights/best.pt,6.035,cuda:0,5,1,640,1,,,,29.235,10.083,65.214,34.206,ok,,2026-07-05T01:20:05.876698+00:00
+rtmpose_s,RTMPose,RTMPose-S,mmpose,outputs/models/rtmpose/best_coco_AP_epoch_30.pth,45.860,cuda:0,5,1,256x192,1,,,,11.250,10.722,13.592,88.892,ok,,2026-07-05T01:20:09.360142+00:00
+hrnet_w32_udp,HRNet,HRNet-W32 UDP,mmpose,outputs/models/hrnet/best_coco_AP_epoch_5.pth,115.248,cuda:0,5,1,256x192,1,,,,46.786,45.993,49.209,21.374,ok,,2026-07-05T01:20:12.994502+00:00
+litehrnet18,Lite-HRNet,Lite-HRNet-18,mmpose,outputs/models/litehrnet/best_coco_AP_epoch_30.pth,5.948,cuda:0,5,1,256x192,1,,,,49.640,49.033,52.521,20.145,ok,,2026-07-05T01:20:16.466005+00:00
+vitpose_small_simple,ViTPose,ViTPose-Small Simple Head,mmpose,outputs/models/vitpose/best_coco_AP_epoch_30.pth,90.921,cuda:0,5,1,256x192,1,,,,16.505,16.122,18.402,60.589,ok,,2026-07-05T01:20:19.844734+00:00

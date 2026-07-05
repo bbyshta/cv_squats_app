@@ -1,0 +1,32 @@
+{
+  "experiment_id": "EXP-TRAIN-002",
+  "architecture": "RTMPose",
+  "model": "RTMPose-S",
+  "backend": "MMPose",
+  "status": "completed",
+  "counts_toward_mandatory_architectures": true,
+  "mandatory_fine_tuning_progress": "2/5",
+  "completed_architectures": [
+    "YOLO Pose",
+    "RTMPose"
+  ],
+  "pending_architectures": [
+    "HRNet",
+    "Lite-HRNet",
+    "ViTPose"
+  ],
+  "final_best_model_selected": false,
+  "real_training_run_by_agent": false,
+  "checkpoint_downloaded_by_agent": false,
+  "best_checkpoint": "outputs/models/rtmpose/best_coco_AP_epoch_30.pth",
+  "primary_metric": {
+    "name": "coco/AP",
+    "value": 0.682306,
+    "source": "MMPose CocoMetric validation at epoch 30"
+  },
+  "caution": [
+    "YOLO metrics were produced by the Ultralytics evaluator.",
+    "RTMPose metrics were produced by MMPose CocoMetric.",
+    "Final comparison should include consistent speed and model-size measurement and preferably common test split evaluation."
+  ]
+}

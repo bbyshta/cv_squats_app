@@ -1,0 +1,58 @@
+{
+  "experiment_id": "EXP-TRAIN-001B",
+  "status": "completed",
+  "recorded_from_user_log": true,
+  "agent_ran_training": false,
+  "command": ".venv/bin/python -m src.training.train_yolo_pose --config configs/train/yolo_pose_5k.yaml",
+  "dataset_yaml": "data/processed/coco_pose_subset_5k/yolo_pose/dataset.yaml",
+  "train_count": 5000,
+  "val_count": 1000,
+  "test_count": 1000,
+  "val_instances": 4342,
+  "epochs": 30,
+  "batch": 8,
+  "imgsz": 640,
+  "device": "cuda:0",
+  "model": "YOLO11n-pose",
+  "framework": "Ultralytics 8.4.83",
+  "python": "3.12.3",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 3060, 11901 MiB",
+  "optimizer": "auto",
+  "seed": 42,
+  "training_time_hours": 0.397,
+  "gpu_memory_after_warmup_gb": 2.06,
+  "final_metrics": {
+    "box_precision": 0.794,
+    "box_recall": 0.644,
+    "box_map50": 0.740,
+    "box_map50_95": 0.495,
+    "pose_precision": 0.747,
+    "pose_recall": 0.451,
+    "pose_map50": 0.467,
+    "pose_map50_95": 0.246
+  },
+  "speed_ms": {
+    "preprocess": 0.1,
+    "inference": 1.4,
+    "postprocess": 0.6
+  },
+  "output_dir": "runs/pose/outputs/models/yolo_pose/extended_yolo_pose_coco_subset_5k",
+  "weights": {
+    "best": {
+      "path": "runs/pose/outputs/models/yolo_pose/extended_yolo_pose_coco_subset_5k/weights/best.pt",
+      "size_mb": 6.0
+    },
+    "last": {
+      "path": "runs/pose/outputs/models/yolo_pose/extended_yolo_pose_coco_subset_5k/weights/last.pt",
+      "size_mb": 6.0
+    }
+  },
+  "limitations": [
+    "Resource-limited 5k subset, not full COCO.",
+    "Same YOLO Pose architecture as EXP-TRAIN-001; does not increase mandatory architecture count.",
+    "Not a paper-level COCO benchmark.",
+    "Final best model is not selected.",
+    "RTMPose, HRNet, Lite-HRNet, and ViTPose remain pending."
+  ]
+}

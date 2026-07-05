@@ -1,0 +1,105 @@
+{
+  "experiment_id": "EXP-TRAIN-003",
+  "status": "completed",
+  "run_type": "manual user-run training",
+  "architecture": "HRNet",
+  "model": "HRNet-W32 UDP",
+  "backend": "MMPose",
+  "config": "configs/mmpose/hrnet_w32_udp_5k_30e.py",
+  "official_config": "/home/paulkrat/ml-project/.venv-mmpose/lib/python3.10/site-packages/mmpose/.mim/configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_hrnet-w32_udp-8xb64-210e_coco-256x192.py",
+  "work_dir": "outputs/models/hrnet",
+  "best_checkpoint": "outputs/models/hrnet/best_coco_AP_epoch_5.pth",
+  "final_epoch_checkpoint": "outputs/models/hrnet/epoch_30.pth",
+  "official_checkpoint": "https://download.openmmlab.com/mmpose/v1/body_2d_keypoint/topdown_heatmap/coco/td-hm_hrnet-w32_udp-8xb64-210e_coco-256x192-73ede547_20220914.pth",
+  "environment": {
+    "backend": "MMPose/MMEngine",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "checkpoint_downloaded_automatically_during_user_run": true
+  },
+  "dataset": {
+    "name": "COCO Keypoints subset 5k",
+    "train_images": 5000,
+    "val_images": 1000,
+    "test_images": 1000,
+    "train_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_train_5k.json",
+    "val_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_val_1k.json",
+    "test_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_test_1k.json",
+    "image_root_prefix": "data/raw/coco/"
+  },
+  "training": {
+    "epochs": 30,
+    "input_size": "256x192",
+    "seed": 42,
+    "work_dir": "outputs/models/hrnet"
+  },
+  "validation_epoch_30": {
+    "coco/AP": 0.784195,
+    "coco/AP .5": 0.938857,
+    "coco/AP .75": 0.862911,
+    "coco/AP (M)": 0.749234,
+    "coco/AP (L)": 0.837559,
+    "coco/AR": 0.808674,
+    "coco/AR .5": 0.948029,
+    "coco/AR .75": 0.872760,
+    "coco/AR (M)": 0.768395,
+    "coco/AR (L)": 0.866551
+  },
+  "best_checkpoint_event": {
+    "checkpoint": "outputs/models/hrnet/best_coco_AP_epoch_5.pth",
+    "epoch": 5,
+    "best_coco_AP": 0.786985,
+    "log_message_best_coco_AP_rounded": 0.7870,
+    "reason": "The training log records the best checkpoint at epoch 5, and epoch 5 coco/AP is higher than epoch 30 coco/AP."
+  },
+  "validation_epoch_5": {
+    "coco/AP": 0.786985,
+    "coco/AP .5": 0.948520,
+    "coco/AP .75": 0.862255,
+    "coco/AP (M)": 0.746080,
+    "coco/AP (L)": 0.841765,
+    "coco/AR": 0.809928,
+    "coco/AR .5": 0.950179,
+    "coco/AR .75": 0.876703,
+    "coco/AR (M)": 0.766870,
+    "coco/AR (L)": 0.871590
+  },
+  "local_checkpoint_file_check": {
+    "best_coco_AP_epoch_5.pth": {
+      "path": "outputs/models/hrnet/best_coco_AP_epoch_5.pth",
+      "exists": true,
+      "size_bytes": 115248176,
+      "size_mib": 109.9,
+      "ls_size": "110M"
+    },
+    "epoch_10.pth": {
+      "path": "outputs/models/hrnet/epoch_10.pth",
+      "exists": true,
+      "size_bytes": 344495142,
+      "size_mib": 328.5,
+      "ls_size": "329M"
+    },
+    "epoch_20.pth": {
+      "path": "outputs/models/hrnet/epoch_20.pth",
+      "exists": true,
+      "size_bytes": 344979238,
+      "size_mib": 329.0,
+      "ls_size": "329M"
+    },
+    "epoch_30.pth": {
+      "path": "outputs/models/hrnet/epoch_30.pth",
+      "exists": true,
+      "size_bytes": 345463014,
+      "size_mib": 329.5,
+      "ls_size": "330M"
+    }
+  },
+  "speed": "not measured",
+  "notes": [
+    "Metrics were produced by MMPose CocoMetric.",
+    "Real training was run manually by the user, not by the agent.",
+    "The checkpoint was downloaded automatically during the user-run training command, not by the agent.",
+    "YOLO metrics were produced by the Ultralytics evaluator; RTMPose and HRNet metrics were produced by MMPose CocoMetric.",
+    "Final comparison should include consistent speed and model-size measurement and preferably common test split evaluation.",
+    "Final best model is not selected."
+  ]
+}

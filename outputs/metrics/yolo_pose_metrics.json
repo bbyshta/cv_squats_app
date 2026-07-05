@@ -1,0 +1,80 @@
+{
+  "experiment_id": "EXP-TRAIN-001",
+  "status": "completed",
+  "run_type": "manual_user_run_training",
+  "date": "2026-07-01",
+  "model_name": "yolo11n-pose",
+  "architecture": "YOLO Pose",
+  "backend": "ultralytics",
+  "framework": {
+    "ultralytics": "8.4.83",
+    "python": "3.12.3",
+    "torch": "2.12.1+cu130",
+    "cuda_device": "CUDA:0 NVIDIA GeForce RTX 3060 11901 MiB"
+  },
+  "dataset": {
+    "dataset_yaml": "data/processed/coco_pose_subset/yolo_pose/dataset.yaml",
+    "train_images": 500,
+    "val_images": 100,
+    "test_images": 100,
+    "train_label_rows": 2104,
+    "val_label_rows": 424,
+    "test_label_rows": 450,
+    "val_instances": 424
+  },
+  "training": {
+    "epochs": 5,
+    "batch": 8,
+    "imgsz": 640,
+    "device": 0,
+    "optimizer_config": "auto",
+    "optimizer_actual": "AdamW",
+    "learning_rate": 0.002,
+    "momentum": 0.9,
+    "seed": 42,
+    "amp": "enabled; checks passed"
+  },
+  "checkpoint": {
+    "pretrained": "yolo11n-pose.pt",
+    "source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11n-pose.pt",
+    "automatic_amp_asset": "yolo26n.pt"
+  },
+  "model_summary": {
+    "layers": 197,
+    "parameters": 2874462,
+    "gflops": 7.5,
+    "fused_layers": 110,
+    "fused_parameters": 2866468,
+    "fused_gflops": 7.4
+  },
+  "validation": {
+    "box_precision": 0.789,
+    "box_recall": 0.620,
+    "box_map50": 0.688,
+    "box_map50_95": 0.425,
+    "pose_precision": 0.673,
+    "pose_recall": 0.450,
+    "pose_map50": 0.411,
+    "pose_map50_95": 0.173
+  },
+  "speed_ms_per_image": {
+    "preprocess": 0.2,
+    "inference": 4.1,
+    "postprocess": 3.4
+  },
+  "outputs": {
+    "run_dir": "runs/pose/outputs/models/yolo_pose/smoke_yolo_pose_coco_subset",
+    "best_weights": "runs/pose/outputs/models/yolo_pose/smoke_yolo_pose_coco_subset/weights/best.pt",
+    "last_weights": "runs/pose/outputs/models/yolo_pose/smoke_yolo_pose_coco_subset/weights/last.pt",
+    "best_weights_mb": 6.0,
+    "last_weights_mb": 6.0
+  },
+  "limitations": [
+    "resource-limited smoke run",
+    "subset is only 500/100/100 images",
+    "not paper-level COCO benchmark",
+    "only YOLO Pose is completed so far",
+    "final best model is not selected"
+  ],
+  "source": "Recorded from user-provided training log; agent did not run training."
+}

@@ -1,0 +1,35 @@
+{
+  "experiment_id": "EXP-TRAIN-004",
+  "architecture": "Lite-HRNet",
+  "model": "Lite-HRNet-18",
+  "backend": "MMPose",
+  "status": "completed",
+  "counts_toward_mandatory_architectures": true,
+  "mandatory_fine_tuning_progress": "4/5",
+  "completed_architectures": [
+    "YOLO Pose",
+    "RTMPose",
+    "HRNet",
+    "Lite-HRNet"
+  ],
+  "pending_architectures": [
+    "ViTPose"
+  ],
+  "final_best_model_selected": false,
+  "real_training_run_by_agent": false,
+  "checkpoint_downloaded_by_agent": false,
+  "checkpoint_downloaded_automatically_during_user_run": true,
+  "best_checkpoint": "outputs/models/litehrnet/best_coco_AP_epoch_30.pth",
+  "final_epoch_checkpoint": "outputs/models/litehrnet/epoch_30.pth",
+  "primary_metric": {
+    "name": "coco/AP",
+    "value": 0.663146,
+    "source": "MMPose CocoMetric validation at epoch 30; log saved best checkpoint at epoch 30"
+  },
+  "speed": "not measured",
+  "caution": [
+    "YOLO metrics were produced by the Ultralytics evaluator.",
+    "RTMPose, HRNet, and Lite-HRNet metrics were produced by MMPose CocoMetric.",
+    "Final comparison still requires consistent inference speed and model-size measurement."
+  ]
+}

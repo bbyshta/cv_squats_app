@@ -1,0 +1,16 @@
+{
+  "experiment_id": "EXP-TRAIN-001",
+  "model_name": "yolo11n-pose",
+  "architecture": "YOLO Pose",
+  "backend": "ultralytics",
+  "status": "completed",
+  "training_ran": true,
+  "run_type": "manual_user_run_training",
+  "dataset_yaml": "data/processed/coco_pose_subset/yolo_pose/dataset.yaml",
+  "output_dir": "runs/pose/outputs/models/yolo_pose/smoke_yolo_pose_coco_subset",
+  "primary_metric": {
+    "name": "pose_mAP50-95",
+    "value": 0.173
+  },
+  "source": "Recorded from user-provided training log; agent did not run training."
+}

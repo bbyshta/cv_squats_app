@@ -1,0 +1,9 @@
+{
+  "experiment_id": "EXP-TRAIN-001B",
+  "status": "completed",
+  "training_ran": true,
+  "recorded_from_user_log": true,
+  "agent_ran_training": false,
+  "output_dir": "runs/pose/outputs/models/yolo_pose/extended_yolo_pose_coco_subset_5k",
+  "metrics_path": "outputs/metrics/yolo_pose_5k_metrics.json"
+}

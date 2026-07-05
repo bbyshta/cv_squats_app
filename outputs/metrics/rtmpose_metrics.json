@@ -1,0 +1,73 @@
+{
+  "experiment_id": "EXP-TRAIN-002",
+  "status": "completed",
+  "run_type": "manual user-run training",
+  "architecture": "RTMPose",
+  "model": "RTMPose-S",
+  "backend": "MMPose",
+  "config": "configs/mmpose/rtmpose_s_5k_30e.py",
+  "work_dir": "outputs/models/rtmpose",
+  "best_checkpoint": "outputs/models/rtmpose/best_coco_AP_epoch_30.pth",
+  "official_checkpoint": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/rtmpose-s_simcc-coco_pt-aic-coco_420e-256x192-8edcf0d7_20230127.pth",
+  "environment": {
+    "python": "3.10.20",
+    "pytorch": "2.1.0+cu121",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "torchvision": "0.16.0+cu121",
+    "opencv": "4.10.0",
+    "mmengine": "0.10.7"
+  },
+  "dataset": {
+    "name": "COCO Keypoints subset 5k",
+    "train_images": 5000,
+    "val_images": 1000,
+    "test_images": 1000,
+    "train_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_train_5k.json",
+    "val_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_val_1k.json",
+    "test_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_test_1k.json",
+    "image_root_prefix": "data/raw/coco/"
+  },
+  "training": {
+    "epochs": 30,
+    "batch_size": 32,
+    "input_size": "256x192",
+    "optimizer": "AdamW",
+    "learning_rate": 0.004,
+    "seed": 42,
+    "validation_interval": 5,
+    "checkpoint_interval": 10,
+    "best_metric": "coco/AP",
+    "estimated_duration": "about 24 minutes"
+  },
+  "validation_epoch_30": {
+    "coco/AP": 0.682306,
+    "coco/AP .5": 0.908210,
+    "coco/AP .75": 0.755651,
+    "coco/AP (M)": 0.644375,
+    "coco/AP (L)": 0.739058,
+    "coco/AR": 0.709534,
+    "coco/AR .5": 0.913978,
+    "coco/AR .75": 0.773477,
+    "coco/AR (M)": 0.663392,
+    "coco/AR (L)": 0.775326
+  },
+  "checkpoint_event": {
+    "previous_best_removed": "outputs/models/rtmpose/best_coco_AP_epoch_25.pth",
+    "saved_best_checkpoint": "outputs/models/rtmpose/best_coco_AP_epoch_30.pth",
+    "best_coco_AP": 0.6823,
+    "epoch": 30
+  },
+  "local_checkpoint_file_check": {
+    "exists": true,
+    "size_bytes": 45860216,
+    "size_mib": 43.7
+  },
+  "speed": "not measured",
+  "notes": [
+    "Metrics were produced by MMPose CocoMetric.",
+    "The agent did not run training.",
+    "The agent did not download the checkpoint.",
+    "Final best model is not selected."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "selected_model_id": "rtmpose_s",
+  "selected_architecture": "RTMPose",
+  "selected_model_name": "RTMPose-S",
+  "selected_backend": "mmpose",
+  "selected_config_path": "configs/mmpose/rtmpose_s_5k_30e.py",
+  "selected_checkpoint_path": "outputs/models/rtmpose/best_coco_AP_epoch_30.pth",
+  "selection_date": "2026-07-05",
+  "selection_basis": [
+    "Five mandatory architecture fine-tuning runs are complete.",
+    "Phase 7C 100-image inference benchmark is complete for all five candidates.",
+    "Selection used measured COCO-style quality, measured image inference speed, measured checkpoint size, integration practicality, dependency risk, expected video suitability, and known limitations.",
+    "COCO quality metrics and push-up video/demo stability remain separate evaluation topics."
+  ],
+  "quality_summary": {
+    "selected_quality_metric_name": "coco/AP",
+    "selected_quality_metric_value": 0.682306,
+    "selected_quality_metric_source": "MMPose CocoMetric validation on EXP-TRAIN-002",
+    "interpretation": "RTMPose-S does not have the highest recorded AP; HRNet-W32 UDP is higher at 0.786985. RTMPose-S is selected because its quality is adequate for the demo while providing a much better practical speed/size balance.",
+    "metric_caution": "YOLO Pose pose_mAP50-95 and MMPose coco/AP are recorded as reported by their tools and are not treated as identical metrics."
+  },
+  "speed_summary": {
+    "benchmark_source": "outputs/metrics/inference_speed.csv",
+    "benchmark_type": "100-image single-frame inference benchmark",
+    "device": "cuda:0",
+    "sample_count": 100,
+    "selected_total_mean_ms": 10.958,
+    "selected_fps": 91.257,
+    "interpretation": "RTMPose-S was the fastest model in the Phase 7C image benchmark. This is not a real video benchmark and is not used to claim real-time video performance."
+  },
+  "size_summary": {
+    "selected_checkpoint_size_mb": 45.86,
+    "interpretation": "RTMPose-S is larger than YOLO Pose and Lite-HRNet-18 but much smaller than HRNet-W32 UDP and ViTPose-Small Simple Head, making it practical for the final demo."
+  },
+  "integration_summary": {
+    "backend": "mmpose",
+    "integration_complexity": "medium",
+    "dependency_risk": "MMPose requires the separate project MMPose environment, but it has already been used successfully for training and benchmarking.",
+    "demo_scope": "The demo app must use only this selected model and must not expose a model-selection dropdown."
+  },
+  "video_suitability_summary": {
+    "status": "expected suitable for selected-model video evaluation",
+    "basis": "Fastest measured image inference among the five candidates with acceptable keypoint AP and moderate checkpoint size.",
+    "video_benchmark_status": "not measured",
+    "real_time_claim": "not claimed"
+  },
+  "limitations": [
+    "Final decision is based on image quality metrics and 100-image image inference speed, not a real video benchmark.",
+    "Push-up-specific video stability metrics are not measured yet.",
+    "Successful and failed push-up examples are not collected yet.",
+    "Typical errors are not analyzed yet and must be collected in Phase 9.",
+    "The training/evaluation dataset is a resource-limited COCO Keypoints subset, not full COCO and not a manually annotated push-up dataset."
+  ],
+  "not_selected_reasons_by_model": {
+    "yolo_pose": "Small and fast, with simple Ultralytics integration, but its recorded pose_mAP50-95 is lower in this experiment and the metric is not directly equivalent to MMPose coco/AP.",
+    "hrnet_w32_udp": "Highest recorded MMPose AP, but much slower in the Phase 7C benchmark and the largest checkpoint, making it less practical for the demo.",
+    "litehrnet18": "Smallest checkpoint, but it had the slowest measured mean inference time in Phase 7C and the lowest recorded MMPose AP.",
+    "vitpose_small_simple": "Fast enough and slightly higher AP than RTMPose-S, but substantially larger and has higher dependency complexity due to the transformer/MMPose stack."
+  },
+  "required_next_steps": [
+    "Integrate RTMPose-S as the only demo model in Phase 8.",
+    "Run selected-model video-oriented evaluation before making video performance claims.",
+    "Create outputs/metrics/video_benchmark.csv only after a real video benchmark.",
+    "Collect at least 3 successful and 3 failed push-up examples in Phase 9.",
+    "Collect observed typical errors in Phase 9 instead of inventing them."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "experiment_id": "EXP-TRAIN-005",
+  "status": "completed",
+  "run_type": "manual user-run training",
+  "architecture": "ViTPose",
+  "model": "ViTPose-Small Simple Head",
+  "backend": "MMPose",
+  "config": "configs/mmpose/vitpose_small_simple_5k_30e.py",
+  "official_config": "/home/paulkrat/ml-project/.venv-mmpose/lib/python3.10/site-packages/mmpose/.mim/configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_ViTPose-small-simple_8xb64-210e_coco-256x192.py",
+  "work_dir": "outputs/models/vitpose",
+  "best_checkpoint": "outputs/models/vitpose/best_coco_AP_epoch_30.pth",
+  "final_epoch_checkpoint": "outputs/models/vitpose/epoch_30.pth",
+  "official_checkpoint": "https://download.openmmlab.com/mmpose/v1/body_2d_keypoint/topdown_heatmap/coco/td-hm_ViTPose-small-simple_8xb64-210e_coco-256x192-4c101a76_20230314.pth",
+  "environment": {
+    "backend": "MMPose/MMEngine",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "mmpretrain_resolved_manually_by_user": true,
+    "checkpoint_downloaded_automatically_during_user_run": true
+  },
+  "dataset": {
+    "name": "COCO Keypoints subset 5k",
+    "train_images": 5000,
+    "val_images": 1000,
+    "test_images": 1000,
+    "train_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_train_5k.json",
+    "val_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_val_1k.json",
+    "test_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_test_1k.json",
+    "image_root_prefix": "data/raw/coco/"
+  },
+  "training": {
+    "epochs": 30,
+    "batch_size": 16,
+    "input_size": "256x192",
+    "optimizer": "AdamW",
+    "learning_rate": 0.0005,
+    "seed": 42,
+    "work_dir": "outputs/models/vitpose"
+  },
+  "validation_epoch_30": {
+    "coco/AP": 0.690507,
+    "coco/AP .5": 0.916884,
+    "coco/AP .75": 0.775054,
+    "coco/AP (M)": 0.657488,
+    "coco/AP (L)": 0.738435,
+    "coco/AR": 0.722760,
+    "coco/AR .5": 0.922939,
+    "coco/AR .75": 0.797491,
+    "coco/AR (M)": 0.679927,
+    "coco/AR (L)": 0.783753
+  },
+  "checkpoint_event": {
+    "previous_best_removed": "outputs/models/vitpose/best_coco_AP_epoch_5.pth",
+    "saved_best_checkpoint": "outputs/models/vitpose/best_coco_AP_epoch_30.pth",
+    "best_coco_AP": 0.6905,
+    "epoch": 30
+  },
+  "local_checkpoint_file_check": {
+    "best_coco_AP_epoch_30.pth": {
+      "path": "outputs/models/vitpose/best_coco_AP_epoch_30.pth",
+      "exists": true,
+      "size_bytes": 90921284,
+      "size_mib": 86.7,
+      "ls_size": "87M"
+    },
+    "epoch_30.pth": {
+      "path": "outputs/models/vitpose/epoch_30.pth",
+      "exists": true,
+      "size_bytes": 264835192,
+      "size_mib": 252.6,
+      "ls_size": "253M"
+    }
+  },
+  "speed": "not measured",
+  "notes": [
+    "Metrics were produced by MMPose CocoMetric.",
+    "Real training was run manually by the user, not by the agent.",
+    "mmpretrain was resolved manually by the user before training.",
+    "The checkpoint was downloaded automatically during the user-run training command, not by the agent.",
+    "Speed is not measured.",
+    "Final comparison should include consistent inference speed and model-size measurement.",
+    "Final best model is not selected."
+  ]
+}

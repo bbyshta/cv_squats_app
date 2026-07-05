@@ -1,0 +1,102 @@
+{
+  "experiment_id": "EXP-TRAIN-004",
+  "status": "completed",
+  "run_type": "manual user-run training",
+  "architecture": "Lite-HRNet",
+  "model": "Lite-HRNet-18",
+  "backend": "MMPose",
+  "config": "configs/mmpose/litehrnet18_5k_30e.py",
+  "official_config": "/home/paulkrat/ml-project/.venv-mmpose/lib/python3.10/site-packages/mmpose/.mim/configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_litehrnet-18_8xb64-210e_coco-256x192.py",
+  "work_dir": "outputs/models/litehrnet",
+  "best_checkpoint": "outputs/models/litehrnet/best_coco_AP_epoch_30.pth",
+  "final_epoch_checkpoint": "outputs/models/litehrnet/epoch_30.pth",
+  "official_checkpoint": "https://download.openmmlab.com/mmpose/top_down/litehrnet/litehrnet18_coco_256x192-6bace359_20211230.pth",
+  "environment": {
+    "backend": "MMPose/MMEngine",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "checkpoint_downloaded_automatically_during_user_run": true
+  },
+  "dataset": {
+    "name": "COCO Keypoints subset 5k",
+    "train_images": 5000,
+    "val_images": 1000,
+    "test_images": 1000,
+    "train_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_train_5k.json",
+    "val_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_val_1k.json",
+    "test_annotations": "data/processed/coco_pose_subset_5k/mmpose/annotations/person_keypoints_test_1k.json",
+    "image_root_prefix": "data/raw/coco/"
+  },
+  "training": {
+    "epochs": 30,
+    "batch_size": 64,
+    "input_size": "256x192",
+    "optimizer": "Adam",
+    "learning_rate": 0.0005,
+    "seed": 42,
+    "work_dir": "outputs/models/litehrnet"
+  },
+  "validation_epoch_30": {
+    "coco/AP": 0.663146,
+    "coco/AP .5": 0.896647,
+    "coco/AP .75": 0.739942,
+    "coco/AP (M)": 0.632501,
+    "coco/AP (L)": 0.709347,
+    "coco/AR": 0.695663,
+    "coco/AR .5": 0.909677,
+    "coco/AR .75": 0.765591,
+    "coco/AR (M)": 0.655400,
+    "coco/AR (L)": 0.752997
+  },
+  "checkpoint_event": {
+    "previous_best_removed": "outputs/models/litehrnet/best_coco_AP_epoch_25.pth",
+    "saved_best_checkpoint": "outputs/models/litehrnet/best_coco_AP_epoch_30.pth",
+    "best_coco_AP": 0.6631,
+    "epoch": 30
+  },
+  "local_checkpoint_file_check": {
+    "best_coco_AP_epoch_30.pth": {
+      "path": "outputs/models/litehrnet/best_coco_AP_epoch_30.pth",
+      "exists": true,
+      "size_bytes": 5947968,
+      "size_mib": 5.7,
+      "ls_size": "5.7M"
+    },
+    "epoch_10.pth": {
+      "path": "outputs/models/litehrnet/epoch_10.pth",
+      "exists": true,
+      "size_bytes": 15137294,
+      "size_mib": 14.4,
+      "ls_size": "15M"
+    },
+    "epoch_20.pth": {
+      "path": "outputs/models/litehrnet/epoch_20.pth",
+      "exists": true,
+      "size_bytes": 15379598,
+      "size_mib": 14.7,
+      "ls_size": "15M"
+    },
+    "epoch_25.pth": {
+      "path": "outputs/models/litehrnet/epoch_25.pth",
+      "exists": true,
+      "size_bytes": 15505678,
+      "size_mib": 14.8,
+      "ls_size": "15M"
+    },
+    "epoch_30.pth": {
+      "path": "outputs/models/litehrnet/epoch_30.pth",
+      "exists": true,
+      "size_bytes": 15628814,
+      "size_mib": 14.9,
+      "ls_size": "15M"
+    }
+  },
+  "speed": "not measured",
+  "notes": [
+    "Metrics were produced by MMPose CocoMetric.",
+    "Real training was run manually by the user, not by the agent.",
+    "The checkpoint was downloaded automatically during the user-run training command, not by the agent.",
+    "Speed is not measured.",
+    "Final comparison should include consistent inference speed and model-size measurement.",
+    "Final best model is not selected."
+  ]
+}
