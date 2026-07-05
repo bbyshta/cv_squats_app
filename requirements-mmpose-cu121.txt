@@ -1,0 +1,12 @@
+# PyTorch CUDA 12.1 and OpenMMLab installer prerequisites.
+# MMCV/MMPose/MMPRETRAIN/MMDetection are installed via MIM in README.md.
+
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+torch==2.1.0+cu121
+torchvision==0.16.0+cu121
+torchaudio==2.1.0+cu121
+
+openmim==0.3.9
+mmengine==0.10.7
+xtcocotools==1.14.3
